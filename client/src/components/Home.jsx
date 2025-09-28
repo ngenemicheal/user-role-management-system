@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -218,13 +218,12 @@ const Home = () => {
                                     <td className="px-4 py-2">{user.role}</td>
                                     <td className="px-4 py-2">
                                         <button
-                                            className={`text-blue-600 hover:text-blue-800 ${
-                                                userData.role === "teacher" ||
-                                                userData.role === "student" ||
-                                                userData.userId === user._id
+                                            className={`text-blue-600 hover:text-blue-800 ${userData.role === "teacher" ||
+                                                    userData.role === "student" ||
+                                                    userData.userId === user._id
                                                     ? "opacity-50 cursor-not-allowed"
                                                     : ""
-                                            }`}
+                                                }`}
                                             onClick={() =>
                                                 userData.role !== "teacher" &&
                                                 userData.role !== "student" &&
@@ -241,22 +240,21 @@ const Home = () => {
                                         </button>
                                         &nbsp; &nbsp; &nbsp;
                                         <button
-                                            className={`text-red-600 hover:text-red-800 ${
-                                                userData.role !==
+                                            className={`text-red-600 hover:text-red-800 ${userData.role !==
                                                     "super-admin" ||
-                                                userData.userId === user._id
+                                                    userData.userId === user._id
                                                     ? "opacity-50 cursor-not-allowed"
                                                     : ""
-                                            }`}
+                                                }`}
                                             onClick={() =>
                                                 userData.role ===
-                                                    "super-admin" &&
+                                                "super-admin" &&
                                                 userData.userId !== user._id &&
                                                 handleDeleteClick(user)
                                             }
                                             disabled={
                                                 userData.role !==
-                                                    "super-admin" ||
+                                                "super-admin" ||
                                                 userData.userId === user._id
                                             }
                                         >

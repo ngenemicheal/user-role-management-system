@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom";
@@ -53,28 +53,28 @@ const Login = () => {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="email"
+                        placeholder="Email"
                         className="p-2 outline-none bg-gray-100 rounded-md w-72"
                     />
                     <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="password"
+                        placeholder="Password"
                         className="p-2 outline-none bg-gray-100 rounded-md w-72"
                     />
                 </div>
                 <div>
                     <button
                         onClick={handleLogin}
-                        className="w-72 bg-green-400 text-white mt-5 py-1 rounded-md font-semibold"
+                        className="w-72 bg-green-600 text-white mt-5 py-1 rounded-md font-semibold"
                     >
                         Login
                     </button>
                 </div>
                 <div>
                     <h5 className="flex w-full justify-center items-center mt-3">
-                        Don't have an account?
+                        Don&apos;t have an account?
                         <Link
                             to="/register"
                             className="text-blue-600 hover:text-blue-800"
